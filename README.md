@@ -5,7 +5,7 @@ To explain the circuit very simple: there are positive / negative inputs connect
 It uses [MySQL](https://www.mysql.com/) as a database, [eclipse mosquitto](https://mosquitto.org/) as MQTT broker, [GoLang](https://go.dev/) to send data recieved from MQTT to the database and [PlatformIO](https://platformio.org/) / Embedded C++ for the [ESP8266 D1-Mini-Lite](https://www.amazon.com/dp/B08HH96RJY) (you can use whatever ESP you want, i dont know if it will work tho)
 
 ### Why?
-My MultiMeter broke and I had nothing to do
+My MultiMeter broke <!-- and I had nothing to do -->
 
 <br><br>
 
