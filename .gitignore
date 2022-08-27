@@ -19,3 +19,5 @@ ESP/test
 go_backend/*.exe
 go_backend/*.sum
 
+
+*.sock
