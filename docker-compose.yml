@@ -1,0 +1,64 @@
+services:
+
+  # ==============
+  # ===   GO   ===
+  # ==============
+  go:
+    build: 
+      dockerfile: ./go_backend/Dockerfile
+      context: ./go_backend
+    volumes:
+      - ./go_backend:/app
+    depends_on:
+      - mosquitto
+      - database
+    
+  
+
+
+
+  # ================
+  # === GRAFANA ===
+  # ================
+  grafana:
+    image: grafana/grafana-oss
+    restart: always
+    ports:
+      - 3000:3000
+    depends_on:
+      - database
+
+
+
+  # ================
+  # === DATABASE ===
+  # ================
+  database:
+    image: mysql
+    # default username: `root`
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql-pass
+    volumes:
+      - ./database:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+
+  # =====================
+  # === DATA RECIEVER ===
+  # =====================
+  mosquitto:
+    image: eclipse-mosquitto
+    # network_mode: host
+    volumes:
+      - ./mosquitto:/mosquitto/config
+    ports:
+      - 8883:8883
