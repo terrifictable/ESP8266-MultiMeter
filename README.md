@@ -10,4 +10,4 @@ My MultiMeter broke and I had nothing to do
 <br><br>
 
 I think this kinda explains how it works, not sure if you can read it tho
-[img](drawing.png)
+<img src="drawing.png" width="600" href="drawing.png">
