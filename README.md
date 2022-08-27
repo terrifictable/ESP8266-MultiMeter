@@ -6,3 +6,8 @@ It uses [MySQL](https://www.mysql.com/) as a database, [eclipse mosquitto](https
 
 ### Why?
 My MultiMeter broke and I had nothing to do
+
+<br><br>
+
+I think this kinda explains how it works, not sure if you can read it tho
+[img](drawing.png)
