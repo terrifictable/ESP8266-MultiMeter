@@ -1,22 +1,5 @@
 services:
 
-  # ==============
-  # ===   GO   ===
-  # ==============
-  go:
-    build: 
-      dockerfile: ./go_backend/Dockerfile
-      context: ./go_backend
-    volumes:
-      - ./go_backend:/app
-    depends_on:
-      - mosquitto
-      - database
-    
-  
-
-
-
   # ================
   # === GRAFANA ===
   # ================
@@ -50,7 +33,8 @@ services:
     restart: always
     ports:
       - 8080:8080
-
+    depends_on:
+      - database
 
   # =====================
   # === DATA RECIEVER ===
@@ -62,3 +46,17 @@ services:
       - ./mosquitto:/mosquitto/config
     ports:
       - 8883:8883
+
+
+
+  # ==============
+  # ===   GO   ===
+  # ==============
+  go:
+    build: ./go_backend
+    # volumes:
+    #   - ./go_backend:/app
+    depends_on:
+      - mosquitto
+      - database
+    
