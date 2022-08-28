@@ -52,6 +52,7 @@ void setup() {
     pinMode(D4, OUTPUT);
     for (int i=0; i < ARRAY_LENGTH(pins); i++) {
         pinMode(_pins[i], INPUT);
+        digitalWrite(_pins[i], LOW);
     }
 
     digitalWrite(LED_BUILTIN, 0);
@@ -86,7 +87,8 @@ void loop() {
 
             Serial.print(pin + ": ");
             Serial.println(voltage);
-            sendMQTT("{\"pin\": \"" + pin + "\", \"voltage\": " + String(voltage) + "}");
+            sendMQTT("{\"Pin\": \"" + pin + "\", \"Voltage\": " + String(voltage) + "}");
+            delay(100);
         }
         Serial.println("=============");
 
