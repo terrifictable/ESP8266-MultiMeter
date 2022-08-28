@@ -20,6 +20,7 @@ Current Bugs:
  - Mosquitto/MQTT, MySQL, Grafana, Adminer and GoBackend, all inside a single docker container / docker-compose "container"
  - GoBackend that receives data from MQTT and posts it to the MySQL Database
 
+<img src="grafana.png" width="1200">
 
 ### Why?
 My MultiMeter broke <!-- and I had nothing to do -->
