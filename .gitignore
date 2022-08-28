@@ -22,4 +22,3 @@ go_backend/*.sum
 
 *.sock
 
-grafana/data
