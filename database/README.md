@@ -1,0 +1,1 @@
+This folder just has to exist and MySQL will do its job with puting data inside here

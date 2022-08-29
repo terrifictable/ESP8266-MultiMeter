@@ -9,6 +9,7 @@ database/*.dblwr
 database/*.index
 database/ib*
 database/undo_*
+database/*.ibd
 
 ESP/.pio
 ESP/.vscode
