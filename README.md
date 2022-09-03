@@ -1,8 +1,12 @@
 # ESP8266-MultiMeter
 A MultiMeter built using an ESP8266 (d1 mini lite)<br>
-To explain the circuit very simple: there are positive / negative inputs connected to `D0`, `D1`, `D2`, `D5`, `D6`, `D7`, `D8` Those will be posted to the database and then shown in a grafana board<br>
+To explain the circuit very simple: there are positive / negative inputs connected to `A0`, `D0`, `D5`, `D6` and `D7` Those will be posted to the database and then shown in a grafana board<br>
+I also added code to be able to connect a screen to the ESP and it should work fine and display some information about the (`A0`) input, pins are: `SCL` -> `D1`, `SDC` -> `D2`, and VCC, GND to `3.3` and `G`/`GND`<br>
 
-It uses [MySQL](https://www.mysql.com/) as a database, [eclipse mosquitto](https://mosquitto.org/) as MQTT broker, [GoLang](https://go.dev/) to send data recieved from MQTT to the database and [PlatformIO](https://platformio.org/) / Embedded C++ for the [ESP8266 D1-Mini-Lite](https://www.amazon.com/dp/B08HH96RJY) (you can use whatever ESP you want, i dont know if it will work tho)
+It uses [MySQL](https://www.mysql.com/) as a database, [eclipse mosquitto](https://mosquitto.org/) as MQTT broker, [GoLang](https://go.dev/) to send data recieved from MQTT to the database and [PlatformIO](https://platformio.org/) / Embedded C++ for the [ESP8266 D1-Mini-Lite](https://www.amazon.com/dp/B08HH96RJY) (you can use whatever ESP you want, i dont know if it will work tho)<br>
+
+`A0` is the `Analog` pin, it can read actuall input inbetween `0` and `3.3`, the `DX` pins can only measure from `0` to `3.3`<br>
+Aka if you want "acurate" data not only `0` and `3.3`, use the `A0` pin otherwise (only `0` and `3.3` data) use the `DX` pins
 
 
 ### How to use
@@ -11,8 +15,8 @@ Its simple:
 2. Run `make` in the root directory of the project, this will install all images needed and run everything you need automatically
 3. Create `config.h` file in `ESP/src` folder using the [sample file](./ESP/src/config.h.sample), this will contain all data that the ESP needs to connect to your "`docker server`"
 4. Wire your ESP up
-    - connect `D3` and `D4` to LED's (`+`) and connect the `-` of the LED's to the ESP's `GND` pin
-    - connect `D0`, `D1`, `D2`, `D5`, `D6`, `D7` and `D8` to cables, those will be the inputs that are going to be measured
+    - connect `D3` to LED's (`+`) and connect the `-` of the LED's to the ESP's `GND` pin
+    - connect `A0`, `D0`, `D5`, `D6` and `D7` to cables, those will be the inputs that are going to be measured
 5. upload the contents of the [`ESP`](./ESP/) folder to an ESP (8266 D1 Mini) using PlatformIO
 6. Thats it, it should now work fine and run without any problems
 
