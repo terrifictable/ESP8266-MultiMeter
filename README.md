@@ -46,4 +46,6 @@ My MultiMeter broke <!-- and I had nothing to do -->
 I think this kinda explains how it works
 <img src="drawing.png" width="600" href="drawing.png">
 
-<!-- <img src="esp.png" width="600" href="esp.png"> -->
+<br>
+My wire stuff... thing, I have an extra cable for `GND`
+<img src="esp.png" width="600" href="esp.png">
