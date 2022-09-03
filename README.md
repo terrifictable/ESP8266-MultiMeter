@@ -48,4 +48,4 @@ I think this kinda explains how it works
 
 <br>
 My wire stuff... thing, I have an extra cable for `GND`
-<img src="esp.png" width="600" href="esp.png">
+<img src="esp.jpg" width="600" href="esp.png">
